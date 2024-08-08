@@ -1,0 +1,7 @@
+www.desinight.lk {
+      redir https://desinight.lk{uri}
+}
+
+desinight.lk {
+        reverse_proxy localhost:5000
+}
