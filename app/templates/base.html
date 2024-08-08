@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    {% include "_components/navbar.html" %}
+
+    <!-- Body Contents -->
+    {% block body %}{% endblock %}
+
+    <!-- Page Footer -->
+    {% include "_components/footer.html" %}
+
+    <!-- Imported Javascript (that gets loaded before after document) -->
+    {% include "_components/imports.after.js.html" %}
+
+    <!-- Code to be appended at the very end of the body -->
+    {% block endbody %}{% endblock %}
+</body>
+
+</html>

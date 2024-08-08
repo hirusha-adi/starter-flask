@@ -1,0 +1,22 @@
+<!-- These goes inside the <head> tag of each template -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page Title -->
+<title>{{ title }}</title>
+
+<!-- Imported StyleSheets -->
+{% include "_components/imports.css.html" %}
+
+<!-- Imported Javascript (that gets loaded before the document) -->
+{% include "_components/imports.before.js.html" %}
+
+<!-- Meta Tags -->
+{% include "_components/meta.html" %}
+
+<!-- Other stuff under the head -->
+{% block head %}{% endblock %}
+
+
+{% include "_components/disable_devtool.html" %}

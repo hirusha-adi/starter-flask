@@ -1,0 +1,27 @@
+<!-- Just load the `disable-devtool` -->
+<!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+
+<!-- Make sure `disable-devtool` loads, if it doesnt, redirect to another page -->
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const script = document.querySelector('script[disable-devtool-auto]');
+        const scriptSrc = script.getAttribute('src');
+
+        if (scriptSrc) {
+            const checkScript = document.createElement('script');
+            checkScript.src = scriptSrc;
+            checkScript.onload = function () {
+                console.log('Script loaded successfully.');
+            };
+            checkScript.onerror = function () {
+                console.log('Script failed to load. Redirecting to Google.');
+                window.location.href = 'https://www.google.com';
+            };
+            document.head.appendChild(checkScript);
+        } else {
+            console.log('Script attribute not found. Redirecting to Google.');
+            window.location.href = 'https://www.google.com';
+        }
+    });
+</script>
