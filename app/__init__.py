@@ -44,15 +44,15 @@ def create_app() -> Flask:
 
     # Blueprints
     from app.views.main import main_bp
-    from app.views.erros import errors_bp
+    from app.views.errors import errors_bp
 
     # Main blueprints
     app.register_blueprint(main_bp) # main public routes, at /
     app.register_blueprint(errors_bp) # error pages
 
     # Admin Blueprints
-    app.register_blueprint(admin_users_bp, url_prefix="/admin/users")
-    app.register_blueprint(admin_contactus_bp, url_prefix="/admin/contact-us")
+    # app.register_blueprint(admin_users_bp, url_prefix="/admin/users")
+    # app.register_blueprint(admin_contactus_bp, url_prefix="/admin/contact-us")
 
     # Add other blueprints
     # app.register_blueprint(other_bp, url_prefix="/other_route")
@@ -77,12 +77,11 @@ def create_app() -> Flask:
     sitemapper.add_endpoint("main.privacy_policy")
     sitemapper.add_endpoint("main.refund_policy")
     sitemapper.add_endpoint("main.faq_page")
-    sitemapper.add_endpoint("main.contact_us")
-    sitemapper.add_endpoint("user.login")
-    sitemapper.add_endpoint("user.register")
-    sitemapper.add_endpoint("user.forgot_password")
+    # sitemapper.add_endpoint("main.contact_us")
+    # sitemapper.add_endpoint("user.login")
+    # sitemapper.add_endpoint("user.register")
+    # sitemapper.add_endpoint("user.forgot_password")
     # ---
-
     logger.debug("Intantiated sitemaps")
 
     logger.info("Application created.")

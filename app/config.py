@@ -16,12 +16,12 @@ class ConfigApp:
     IS_PROD = ENVIRONMENT_NAME.startswith("dev")
 
     # Database Configuration
-    MYSQL_USERNAME: str = str(os.getenv("MYSQL_USERNAME"))
-    MYSQL_PASSWORD: str = str(os.getenv("MYSQL_PASSWORD"))
-    MYSQL_HOST: str = str(os.getenv("MYSQL_HOST"))
-    MYSQL_DATABASE: str = str(os.getenv("MYSQL_DATABASE"))
+    # MYSQL_USERNAME: str = str(os.getenv("MYSQL_USERNAME"))
+    # MYSQL_PASSWORD: str = str(os.getenv("MYSQL_PASSWORD"))
+    # MYSQL_HOST: str = str(os.getenv("MYSQL_HOST"))
+    # MYSQL_DATABASE: str = str(os.getenv("MYSQL_DATABASE"))
     SQLALCHEMY_DATABASE_URI: str = (
-        f"mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DATABASE}"
+        f"sqlite:///database.db"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = False
     
